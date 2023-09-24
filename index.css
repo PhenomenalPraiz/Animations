@@ -1,0 +1,170 @@
+html, body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;  
+}
+
+.sky{
+    height: 40%;
+    background-color: skyblue;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.sky div{
+    width: 25%;
+    height: 40vh;
+    /* border: 1px solid black; */
+}
+.cloudsty{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.cloudsty1{
+    display: flex;
+    align-items: flex;
+    justify-content: flex;
+}
+.sunimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 40%;
+}
+.grass{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: last baseline;
+    align-items: center;
+    /* background-color: seagreen; */
+}
+.grass div{
+    width: 100%;
+    height: 30vh;
+    /* border: 1px solid black; */
+    background-image: url(./grass1img-removebg-preview.png);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    }
+    .grass span{
+        display: flex;
+        width: 35%;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        left: 100px;
+        bottom: 200px;
+        /* height: 5vh; */
+        /* border: 1px solid black; */
+        text-align: center;
+        background-color: goldenrod;
+        color: gainsboro;
+        font-size: 26px;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typeanime 3s steps(40, end) infinite alternate,
+          move 15s infinite forwards ;
+    }
+
+
+    @keyframes typeanime{
+        from{
+            width: 0%;
+        }
+        to{
+            width: 60%;
+        }
+    }
+    @keyframes move{
+        from{transform: translateX(10px);}
+        to{transform: translateX(900px);}
+    }
+
+
+
+.road{
+    height: 30%;
+    background-color: dimgrey;
+    box-sizing: border-box;
+    border-bottom: 5px solid grey;
+    border-top: 5px solid grey;
+    width: 100%;
+}
+.lines{
+    box-sizing: border-box;
+    border: 5px dashed #fff;
+    height: 0px;
+    position: relative;
+    top: 52%;
+}
+
+
+/* ///ELEMENTS TO STYLE/// */
+
+.mario{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: -20px;
+    left: 0px;
+    animation: drive 3s both infinite linear,
+        jump 0.3s 1.2s ease ;
+    /* animation-fill-mode: both; */
+    /* animation-delay: 3s; */
+    /* animation-iteration-count: infinite; */
+    /* animation-timing-function: linear; */
+    /* animation: jump 5s linear infinite; */
+}
+.luigi{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 90px;
+    left: 0px;
+    animation: drive 3s;
+    animation-fill-mode: both;
+    /* animation-delay: 3s; */
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+}
+.cloud{
+    position: absolute;
+}
+.cloud:nth-child(1){
+    width: 200px;
+    top: 100px;
+    opacity: 0.5;
+    animation: wind 50s linear infinite;
+
+}
+.cloud:nth-child(2){
+    width: 300px;
+    top: 0px;
+    animation: wind 80s linear infinite;
+    /* opacity: 0.5; */
+}
+
+/*//KEYFRAMES// */
+
+@keyframes drive{
+    from{transform: translateX(-200px);}
+    to{transform: translateX(1380px);}
+}
+@keyframes wind{
+    from{left: -300px;}
+    to{left: 100%;}
+}
+@keyframes jump{
+    0%{top: -40px;}
+    50%{top: -100px;}
+    100%{top: -40px;}
+}
+
